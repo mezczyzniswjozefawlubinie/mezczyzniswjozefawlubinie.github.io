@@ -46,7 +46,7 @@ export default function Aktualnosci() {
           priority
         />
       </div>
-      <main className="center-column-about">
+      <main className="center-column-about margin-top">
         <Typography variant="h3" component="h3" gutterBottom align="center">
           Aktualności
         </Typography>
