@@ -11,13 +11,15 @@ export default function Onas() {
   return (
     <ThemeProvider theme={darkTheme}>
       <div className="logo-top-left">
-        <Image
-          src="/img/herb_diecezji.png"
-          alt="Logo"
-          width={128}
-          height={128}
-          priority
-        />
+        <Link href="https://diecezja.legnica.pl" passHref rel="noopener noreferrer" target="_blank">
+          <Image
+            src="/img/herb_diecezji.png"
+            alt="Logo"
+            width={128}
+            height={128}
+            priority
+          />
+        </Link>
       </div>
       <div className="logo-top-right">
         <Image
