@@ -95,13 +95,7 @@ export default function Onas() {
           </i>
           <br />
           <span className="quote-source">
-            <a
-              href="https://biblia.deon.pl/rozdzial.php?id=627"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
               Syr 37, 12
-            </a>
           </span>
         </p>
         <p>
@@ -126,13 +120,7 @@ export default function Onas() {
           </i>
           <br />
           <span className="quote-source">
-            <a
-              href="https://biblia.deon.pl/rozdzial.php?id=85"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
               Wj 34,23-24
-            </a>
           </span>
         </p>
         <p>
@@ -142,10 +130,10 @@ export default function Onas() {
         <br/>
         <p>SZERZEJ:
             <ul className="inline-list">
-            <li><a target="_blank"
-              rel="noopener noreferrer" href="http://www.mezczyzni.net">Strona Stowarzyszenia Mężczyzn św.Józefa</a></li>
-            <li><a target="_blank"
-              rel="noopener noreferrer" href="http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku">Wywiad z nami w czasie ubiegłorocznej pielgrzymki na Jasną Górę</a></li>
+            <li>Strona Stowarzyszenia Mężczyzn św.Józefa: <a className="underlined-link" target="_blank"
+              rel="noopener noreferrer" href="http://www.mezczyzni.net">http://www.mezczyzni.net</a></li>
+            <li>Wywiad z nami w czasie ubiegłorocznej pielgrzymki na Jasną Górę: <a className="underlined-link" target="_blank"
+              rel="noopener noreferrer" href="http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku">http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku</a></li>
             </ul>
 </p>
 

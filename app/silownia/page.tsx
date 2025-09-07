@@ -6,25 +6,33 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type QuoteObj = {
   quote: string;
   source: string;
-  url: string;
 }
 
 export default function Silownia() {
   const [quoteObj, setQuoteObj] = useState<QuoteObj | null>(null);
+  const [quotes, setQuotes] = useState<QuoteObj[]>([]);
+
+  useEffect(() => {
+    fetch("/quotes.json")
+      .then((res) => res.json())
+      .then((data) => setQuotes(data));
+  }, []);
   
-  const generateQuote = (): QuoteObj => {
-  // Example static quote, you can randomize or fetch as needed
-  return {
-    quote: "Cała społeczność Izraelitów zgromadziła się w Szilo i wzniesiono tam Namiot Spotkania. Kraj cały był już im poddany. Pozostało jeszcze wśród Izraelitów siedem pokoleń, które nie otrzymały swego dziedzictwa. Rzekł więc Jozue do tych Izraelitów: «Jak długo będziecie zwlekać z objęciem w posiadanie kraju, który dał wam Pan, Bóg waszych ojców?",
-    source: "Joz 18,1-3",
-    url: "https://biblia.deon.pl/rozdzial.php?id=1130"
+  const generateQuote = (): QuoteObj | null => {
+    console.log("Quotes")
+    console.log(quotes)
+
+    if (quotes.length === 0) return null;
+    const idx = Math.floor(Math.random() * quotes.length);
+    console.log(quotes[idx])
+
+    return quotes[idx];
   };
-}
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -48,7 +56,7 @@ export default function Silownia() {
           priority
         />
       </div>
-      <main className="center-column-about">
+      <main className="center-column-silownia margin-top-silownia">
         <Typography variant="h3" component="h3" gutterBottom align="center">
           SiŁOWniA
         </Typography>
@@ -71,13 +79,7 @@ export default function Silownia() {
                   <i>{quoteObj.quote}</i>
                   <br />
                   <span className="quote-source">
-                    <a
-                      href={quoteObj.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >
                       {quoteObj.source}
-                    </a>
                   </span>
                 </div>
               ) : (
@@ -87,9 +89,6 @@ export default function Silownia() {
               )}
               </div>
               </li>
-            {/* <li className="generate-quote-button-li">
-              
-            </li> */}
             <li>
               ...lub zacznij samodzielną przygodę z systematycznym czytaniem
               Biblii.

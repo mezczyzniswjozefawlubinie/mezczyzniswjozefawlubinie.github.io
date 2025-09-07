@@ -120,6 +120,23 @@ body {
   font-style: normal;
 }
 
+@media (max-width: 600px) {
+  .generate-quote-button-li {
+    padding-left: 0 !important;
+  }
+
+  .quote {
+    padding: 0 !important;
+    /* padding-left: 0.5em;
+    padding-right: 0.5em; */
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+  }
+  .quote-source {
+    text-align: center;
+  }
+}
+
 .margin-top {
   margin-top: 15em;
 }
@@ -138,4 +155,68 @@ body {
   text-align: left;
   padding-left: 5em;
   list-style: none; /* optional: removes the number for this item */
+}
+
+.underlined-link {
+  text-decoration: underline;
+  color: #7c4926
+}
+
+@media (max-width: 600px) {
+  .logo-top-left,
+  .logo-top-right {
+    width: 96px;
+  }
+}
+
+@media (max-width: 600px) {
+  .center-column-about {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Siłownia */
+
+.center-column-silownia {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  min-height: 100vh;
+  /* justify-content: center; */
+  gap: 24px; /* space between cards */
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.margin-top-silownia{
+  margin-top: 15em;
+}
+
+@media (max-width: 600px) {
+  .center-column-silownia {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .margin-top-silownia{
+    margin-top: 15em;
+  }
+
+  body {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
