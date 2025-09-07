@@ -29,15 +29,13 @@ export default function Aktualnosci() {
   return (
     <ThemeProvider theme={darkTheme}>
       <div className="logo-top-left">
-        <Link href="https://diecezja.legnica.pl" passHref rel="noopener noreferrer" target="_blank">
-          <Image
-            src="/img/herb_diecezji.png"
-            alt="Logo"
-            width={128}
-            height={128}
-            priority
-          />
-        </Link>
+        <Image
+          src="/img/herb_diecezji.png"
+          alt="Logo"
+          width={128}
+          height={128}
+          priority
+        />
       </div>
       <div className="logo-top-right">
         <Image
@@ -48,10 +46,30 @@ export default function Aktualnosci() {
           priority
         />
       </div>
-      <main className="center-column-about margin-top">
+      <main className="center-column-about">
         <Typography variant="h3" component="h3" gutterBottom align="center">
           Aktualności
         </Typography>
+        <p style={{ fontStyle: "italic", textAlign: "center", margin: "16px 0", fontSize: "1.5em", color: "#aaa" }}>
+          Strona w budowie
+        </p>
+        <div
+          className="fullwidth-mobile"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            src="/img/wbudowie.png"
+            alt="W budowie"
+            width={1200}
+            height={600}
+            className="responsive-image"
+            priority
+          />
+        </div>
       </main>
     </ThemeProvider>
   );
