@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       <div className="logo-top-right">
         <Image
-          src="/img/logo_mezczyzni.png"
+          src="/img/logo_mezczyzni_red.png"
           alt="Logo"
           width={256}
           height={256}
