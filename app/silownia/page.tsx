@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Header from "../components/Header";
 
 type QuoteObj = {
   quote: string;
@@ -36,25 +37,8 @@ export default function Silownia() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <div className="logo-top-left">
-        <Image
-          src="/img/herb_diecezji.png"
-          alt="Logo"
-          width={128}
-          height={128}
-          priority
-        />
-      </div>
-      <div className="logo-top-right">
-        <Image
-          src="/img/logo_mezczyzni_red.png"
-          alt="Logo"
-          width={256}
-          height={256}
-          priority
-        />
-      </div>
-      <main className="center-column-silownia margin-top-silownia">
+      <Header />
+      <main className="center-column-silownia margin-top">
         <Typography variant="h3" component="h3" gutterBottom align="center">
           SiŁOWniA
         </Typography>
@@ -62,7 +46,7 @@ export default function Silownia() {
           Proponowane działania:
           <ol className="inline-list-ordered">
             <li>Wylosuj jeden z wybranych przez nas cytatów Pisma Świętego</li>
-            <li>Powtarzaj go sobie ze 2-3 razy dziennie przez kilka dni</li>
+            <li>Powtarzaj go sobie 2-3 razy dziennie przez kilka dni</li>
             <li>Zaobserwuj, czy warto wrócic po następny cytat...
               <div className="generate-quote-button-li">
                 

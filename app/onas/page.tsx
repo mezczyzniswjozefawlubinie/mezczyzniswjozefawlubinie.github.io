@@ -5,29 +5,14 @@ import darkTheme from "../theme";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import Image from "next/image";
+import Header from "../components/Header";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import MailIcon from "@mui/icons-material/Mail";
 
 export default function Onas() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <div className="logo-top-left">
-        <Image
-          src="/img/herb_diecezji.png"
-          alt="Logo"
-          width={128}
-          height={128}
-          priority
-        />
-      </div>
-      <div className="logo-top-right">
-        <Image
-          src="/img/logo_mezczyzni_red.png"
-          alt="Logo"
-          width={256}
-          height={256}
-          priority
-        />
-      </div>
+      <Header />
       <main className="center-column-about margin-top">
         <Typography variant="h3" component="h3" gutterBottom align="center">
           Wspólnota Mężczyzn św. Józefa w Lubinie
@@ -42,7 +27,7 @@ export default function Onas() {
           milczenia, odwagi i zaufania Bogu. Szukamy spełnienia w życiu z Bogiem
           i dla Boga - we wszystkich codziennych czynnościach i obowiązkach.
         </p>
-        <br/>
+        <br />
         <Typography variant="h5" component="h5" gutterBottom align="center">
           Co robimy?
         </Typography>
@@ -81,7 +66,7 @@ export default function Onas() {
             </li>
           </ul>
         </p>
-        <br/>
+        <br />
         <Typography variant="h5" component="h5" gutterBottom align="center">
           Dla kogo jesteśmy?
         </Typography>
@@ -92,15 +77,13 @@ export default function Onas() {
             twojej duszy, i kto, jeślibyś upadł, będzie współczuł tobie.”
           </i>
           <br />
-          <span className="quote-source">
-              Syr 37, 12
-          </span>
+          <span className="quote-source"> Syr 37, 12 </span>
         </p>
         <p>
           Jeśli takiej wspólnoty poszukujesz - zapraszamy do wysiłku w jej
           współtworzeniu.
         </p>
-        <br/>
+        <br />
         <Typography variant="h5" component="h5" gutterBottom align="center">
           Dokąd zmierzamy?
         </Typography>
@@ -117,24 +100,65 @@ export default function Onas() {
             Boga twego.”
           </i>
           <br />
-          <span className="quote-source">
-              Wj 34,23-24
-          </span>
+          <span className="quote-source"> Wj 34,23-24 </span>
         </p>
         <p>
           Zapraszamy zarówno mężczyzn „poszukujących swojego miejsca w Kościele”
           jak tych, którzy uważają się za „poszukujących w wierze”.
         </p>
-        <br/>
-        <p>SZERZEJ:
-            <ul className="inline-list">
-            <li>Strona Stowarzyszenia Mężczyzn św.Józefa: <a className="underlined-link" target="_blank"
-              rel="noopener noreferrer" href="http://www.mezczyzni.net">http://www.mezczyzni.net</a></li>
-            <li>Wywiad z nami w czasie ubiegłorocznej pielgrzymki na Jasną Górę: <a className="underlined-link" target="_blank"
-              rel="noopener noreferrer" href="http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku">http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku</a></li>
-            </ul>
-</p>
-
+        <br />        
+        <p>
+          SZERZEJ:
+          <ul className="inline-list">
+            <li>
+              Strona Stowarzyszenia Mężczyzn św.Józefa:{" "}
+              <a
+                className="underlined-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://www.mezczyzni.net"
+              >
+                http://www.mezczyzni.net
+              </a>
+            </li>
+            <li>
+              Wywiad z nami w czasie ubiegłorocznej pielgrzymki na Jasną Górę:{" "}
+              <a
+                className="underlined-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku"
+              >
+                http://www.legnica.fm/pielgrzymka-legnicka/54403-wspolnota-sw-jozefa-na-pielgrzymkowym-szlaku
+              </a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          KONTAKT:
+          <ul className="inline-list">
+            <li>
+              <FacebookIcon style={{ verticalAlign: "middle", marginRight: 8 }} />
+              <a
+                className="underlined-link"
+                href="fb.com/msjlubin"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                fb.com/msjlubin
+              </a>
+            </li>
+            <li>
+              <MailIcon style={{ verticalAlign: "middle", marginRight: 8 }} />
+              <a
+                className="underlined-link"
+                href="mezczyznilubin@gmail.com"
+              >
+                mezczyznilubin@gmail.com
+              </a>
+            </li>
+          </ul>
+        </p>
       </main>
     </ThemeProvider>
   );

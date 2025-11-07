@@ -1,76 +1,32 @@
-"use client";
+import fs from "fs";
+import path from "path";
+import PostsReader from "./PostsReader";
 
-import { ThemeProvider } from "@mui/material";
-import darkTheme from "../theme";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
+type Post = {
+  title: string;
+  author: string;
+  date: string;
+  technicalDate: string; // Dodaj pole technicalDate
+  content: string;
+};
 
-type QuoteObj = {
-  quote: string;
-  source: string;
-  url: string;
-}
+export default async function Aktualnosci() {
+  // Ścieżka do katalogu z plikami JSON
+  const postsDirectory = path.join(process.cwd(), "public", "posts");
 
-export default function Aktualnosci() {
-  const [quoteObj, setQuoteObj] = useState<QuoteObj | null>(null);
-  
-  const generateQuote = (): QuoteObj => {
-  // Example static quote, you can randomize or fetch as needed
-  return {
-    quote: "Cała społeczność Izraelitów zgromadziła się w Szilo i wzniesiono tam Namiot Spotkania. Kraj cały był już im poddany. Pozostało jeszcze wśród Izraelitów siedem pokoleń, które nie otrzymały swego dziedzictwa. Rzekł więc Jozue do tych Izraelitów: «Jak długo będziecie zwlekać z objęciem w posiadanie kraju, który dał wam Pan, Bóg waszych ojców?",
-    source: "Joz 18,1-3",
-    url: "https://biblia.deon.pl/rozdzial.php?id=1130"
-  };
-}
+  // Pobierz wszystkie pliki JSON z katalogu
+  const filenames = fs.readdirSync(postsDirectory);
 
-  return (
-    <ThemeProvider theme={darkTheme}>
-      <div className="logo-top-left">
-        <Image
-          src="/img/herb_diecezji.png"
-          alt="Logo"
-          width={128}
-          height={128}
-          priority
-        />
-      </div>
-      <div className="logo-top-right">
-        <Image
-          src="/img/logo_mezczyzni_red.png"
-          alt="Logo"
-          width={256}
-          height={256}
-          priority
-        />
-      </div>
-      <main className="center-column-about">
-        <Typography variant="h3" component="h3" gutterBottom align="center">
-          Aktualności
-        </Typography>
-        <p style={{ fontStyle: "italic", textAlign: "center", margin: "16px 0", fontSize: "1.5em", color: "#aaa" }}>
-          Strona w budowie
-        </p>
-        <div
-          className="fullwidth-mobile"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            src="/img/wbudowie.png"
-            alt="W budowie"
-            width={1200}
-            height={600}
-            className="responsive-image"
-            priority
-          />
-        </div>
-      </main>
-    </ThemeProvider>
-  );
+  // Wczytaj dane z każdego pliku JSON
+  const posts: Post[] = filenames.map((filename: string) => {
+    const filePath = path.join(postsDirectory, filename);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    return JSON.parse(fileContents);
+  });
+
+  // Posortuj posty po polu technicalDate (malejąco)
+  posts.sort((a, b) => (a.technicalDate > b.technicalDate ? -1 : 1));
+
+  // Przekaż dane do komponentu klienckiego
+  return <PostsReader posts={posts} />;
 }

@@ -7,30 +7,12 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Image from "next/image";
+import Header from "./components/Header";
 
 export default function Home() {
   return (
     <ThemeProvider theme={darkTheme}>
-      <div className="logo-top-left">
-        <Link href="https://diecezja.legnica.pl" passHref rel="noopener noreferrer" target="_blank">
-          <Image
-            src="/img/herb_diecezji.png"
-            alt="Logo"
-            width={128}
-            height={128}
-            priority
-          />
-        </Link>
-      </div>
-      <div className="logo-top-right">
-        <Image
-          src="/img/logo_mezczyzni_red.png"
-          alt="Logo"
-          width={256}
-          height={256}
-          priority
-        />
-      </div>
+      <Header />
       <main className="center-column">
         <Link href="/onas/" passHref legacyBehavior>
           <Card

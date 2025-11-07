@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a !important;
-  --foreground: #ededed !important;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -14,14 +14,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a !important;
-    --foreground: #ededed !important;
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
 }
 
 :root, body {
-  --background: #0a0a0a !important;
-  --foreground: #ededed !important;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
@@ -31,7 +31,8 @@ body {
   padding: 1rem;
 }
 
-.dark-card {
+/* .dark-card {
+  background: #131313;
   background: #131313;
   border: 2px solid #ccc;
   border-radius: 16px;
@@ -42,8 +43,19 @@ body {
 .dark-card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+} */
+
+.dark-card {
+  background-color: transparent; /* Ustawia tło na przezroczyste */
+  border: 2px solid #ffffff; /* Biała obwódka */
+  color: #ffffff; /* Biały tekst */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Dodaj efekt hover */
 }
 
+.dark-card:hover {
+  transform: scale(1.05); /* Powiększenie przy najechaniu */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Subtelny cień */
+}
 .card-content{
   background: #131313;
 }
@@ -143,7 +155,7 @@ body {
 }
 
 .margin-top {
-  margin-top: 15em;
+  padding-top: 15em;
 }
 
 .generate-quote-button {
@@ -245,5 +257,57 @@ body {
 }
 
 html, body {
-  background-color: #0a0a0a !important;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%; /* Zapewnia, że zawartość wypełnia stronę */
+  color: var(--foreground, #ffffff);
+}
+
+html::before {
+  content: "";
+  position: fixed; /* Ustawienie jako nieruchome */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #000000, #3b3b3b);
+  z-index: -1; /* Umieszcza gradient za zawartością */
+}
+
+.blog-post {
+  background-color: #222;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post-meta {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #90caf9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.blog-post-list ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+.blog-post-list ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
